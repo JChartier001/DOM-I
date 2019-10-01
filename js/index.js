@@ -43,13 +43,10 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 //adding text to nav links
 const navLinks = document.querySelectorAll('a');
-
-navLinks[0].textContent = siteContent['nav']['nav-item-1'];
-navLinks[1].textContent = siteContent['nav']['nav-item-2'];
-navLinks[2].textContent = siteContent['nav']['nav-item-3'];
-navLinks[3].textContent = siteContent['nav']['nav-item-4'];
-navLinks[4].textContent = siteContent['nav']['nav-item-5'];
-navLinks[5].textContent = siteContent['nav']['nav-item-6'];
+console.log(navLinks);
+navLinks.forEach((element, i) => {
+ element.textContent = siteContent.nav[`nav-item-${i+1}`];
+});
 
 //change text color to green
 navLinks.forEach((element) => {
@@ -80,7 +77,6 @@ middleText[2].classList.add("services");
 middleText[3].classList.add("product")
 middleText[4].classList.add("vision")
 
-
 //adding title to h4
 const featureTitle = document.querySelector(".features")
 featureTitle.textContent = siteContent["main-content"]["features-h4"];
@@ -97,6 +93,31 @@ productTitle.textContent = siteContent["main-content"]["product-h4"];
 const visionTitle = document.querySelector(".vision")
 visionTitle.textContent = siteContent["main-content"]["vision-h4"];
 
+featureTitle.style.textDecorationLine = "underline";
+featureTitle.style.textDecorationStyle = "wavy";
+featureTitle.style.fontSize = "2.0rem";
+featureTitle.style.paddingBottom = "3%";
+
+aboutTitle.style.textDecorationLine = "underline";
+aboutTitle.style.textDecorationStyle = "wavy";
+aboutTitle.style.fontSize = "2.0rem";
+aboutTitle.style.paddingBottom = "3%";
+
+
+servicesTitle.style.textDecorationLine = "underline";
+servicesTitle.style.textDecorationStyle = "wavy";
+servicesTitle.style.fontSize = "2.0rem";
+servicesTitle.style.paddingBottom = "3%";
+
+productTitle.style.textDecorationLine = "underline";
+productTitle.style.textDecorationStyle = "wavy";
+productTitle.style.fontSize = "2.0rem";
+productTitle.style.paddingBottom = "3%";
+
+visionTitle.style.textDecorationLine = "underline";
+visionTitle.style.textDecorationStyle = "wavy";
+visionTitle.style.fontSize = "2.0rem";
+visionTitle.style.paddingBottom = "3%";
 
 //adding classes to middletext paragraph
 const middleTextP = document.querySelectorAll('p');
@@ -142,8 +163,12 @@ contactInfo[0].style.whiteSpace = "pre";
 const footer = document.querySelector('footer p');
 footer.textContent = "Copyright Great Idea! 2018";
 
+//adding nav
 const navNode = document.createElement('a');
 const navText = document.createTextNode("Gallery");
 navNode.appendChild(navText);
+document.querySelector("nav").appendChild(navNode);
+
 const nav = document.querySelector('nav');
-console.log(nav);
+const navText2 = document.createTextNode("Blog");
+document.querySelector("nav").prepend(navText2);
