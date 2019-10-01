@@ -60,7 +60,6 @@ title.textContent = siteContent['cta']['h1'];
 
 //adding text to button
 const buttonText = document.querySelector('.cta-text button');
-
 buttonText.textContent = siteContent.cta.button;
 
 //changing image source
@@ -70,7 +69,6 @@ ctaImage.src = siteContent.cta["img-src"];
 
 //adding classes to h4
 const middleText = document.querySelectorAll('h4');
-
 middleText[0].classList.add("features");
 middleText[1].classList.add("about");
 middleText[2].classList.add("services");
@@ -93,31 +91,15 @@ productTitle.textContent = siteContent["main-content"]["product-h4"];
 const visionTitle = document.querySelector(".vision")
 visionTitle.textContent = siteContent["main-content"]["vision-h4"];
 
-featureTitle.style.textDecorationLine = "underline";
-featureTitle.style.textDecorationStyle = "wavy";
-featureTitle.style.fontSize = "2.0rem";
-featureTitle.style.paddingBottom = "3%";
-
-aboutTitle.style.textDecorationLine = "underline";
-aboutTitle.style.textDecorationStyle = "wavy";
-aboutTitle.style.fontSize = "2.0rem";
-aboutTitle.style.paddingBottom = "3%";
-
-
-servicesTitle.style.textDecorationLine = "underline";
-servicesTitle.style.textDecorationStyle = "wavy";
-servicesTitle.style.fontSize = "2.0rem";
-servicesTitle.style.paddingBottom = "3%";
-
-productTitle.style.textDecorationLine = "underline";
-productTitle.style.textDecorationStyle = "wavy";
-productTitle.style.fontSize = "2.0rem";
-productTitle.style.paddingBottom = "3%";
-
-visionTitle.style.textDecorationLine = "underline";
-visionTitle.style.textDecorationStyle = "wavy";
-visionTitle.style.fontSize = "2.0rem";
-visionTitle.style.paddingBottom = "3%";
+const textDec = document.querySelectorAll('.text-content h4');
+console.log(textDec);
+textDec.forEach((element) => {
+    element.style.textDecorationLine = "underline";
+    element.style.textDecorationStyle = "wavy";
+    element.style.fontSize = "2.0rem";
+    element.style.paddingBottom = "3%";
+    element.style.color = "coral";
+})
 
 //adding classes to middletext paragraph
 const middleTextP = document.querySelectorAll('p');
@@ -163,7 +145,7 @@ contactInfo[0].style.whiteSpace = "pre";
 const footer = document.querySelector('footer p');
 footer.textContent = "Copyright Great Idea! 2018";
 
-//adding nav
+//adding 2 extra navs appendChild()
 const navNode = document.createElement('a');
 const navText = document.createTextNode("Gallery");
 navNode.appendChild(navText);
@@ -172,3 +154,7 @@ document.querySelector("nav").appendChild(navNode);
 const nav = document.querySelector('nav');
 const navText2 = document.createTextNode("Blog");
 document.querySelector("nav").prepend(navText2);
+
+// adding color to added navs
+navNode.style.color = "green";
+nav.style.color = "green";
